@@ -11,7 +11,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using RotaRandomizer.Domain.Repositories;
+using RotaRandomizer.Domain.Services;
 using RotaRandomizer.Persistence.Contexts;
+using RotaRandomizer.Persistence.Repositories;
+using RotaRandomizer.Services;
 
 namespace RotaRandomizer
 {
@@ -34,8 +38,14 @@ namespace RotaRandomizer
             );
             services.AddMvc();
 
-            services.AddScoped<Domain.Repositories.RotaRepositoryInterface, Persistence.Repositories.RotaRepository>();
-            services.AddScoped<Domain.Services.RotaServiceInterface, Services.RotaService>();
+            services.AddScoped<IRotaRepository, RotaRepository>();
+            services.AddScoped<IRotaService, RotaService>();
+
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IEmployeeService, EmployeeService>();
+
+            services.AddScoped<IShiftRepository, ShiftRepository>();
+            services.AddScoped<IShiftService, ShiftService>();
 
         }
 

@@ -13,9 +13,9 @@ namespace RotaRandomizer.Controllers
     [ApiController]
     public class RotasController : ControllerBase
     {
-        private readonly RotaServiceInterface _rotaService;
+        private readonly IRotaService _rotaService;
 
-        public RotasController(RotaServiceInterface rotaService)
+        public RotasController(IRotaService rotaService)
         {
             _rotaService = rotaService;
         }

@@ -10,7 +10,7 @@ namespace RotaRandomizer.Models
         public int Id { get; set; }
         public DateTime Start { get; set; }
         public DateTime End { get; set; }
-        public ShiftTypeEnum ShiftType { get; set; } 
+        public EShiftType ShiftType { get; set; } 
         public Employee ShiftEmployee { get; set; } 
         public Rota Rota { get; set; } 
     }

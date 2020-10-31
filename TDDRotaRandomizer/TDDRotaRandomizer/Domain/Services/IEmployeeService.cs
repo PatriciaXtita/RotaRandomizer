@@ -1,13 +1,13 @@
-﻿using System;
+﻿using RotaRandomizer.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using RotaRandomizer.Models;
 
 namespace RotaRandomizer.Domain.Services
 {
-    public interface RotaServiceInterface
+    public interface IEmployeeService
     {
-        Task<IEnumerable<Rota>> ListAsync();
+        Task<IEnumerable<Employee>> ListAsync();
     }
 }

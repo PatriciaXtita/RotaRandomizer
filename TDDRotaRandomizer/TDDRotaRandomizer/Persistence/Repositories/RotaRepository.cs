@@ -9,7 +9,7 @@ using RotaRandomizer.Persistence.Contexts;
 
 namespace RotaRandomizer.Persistence.Repositories
 {
-    public class RotaRepository : BaseRepository, RotaRepositoryInterface
+    public class RotaRepository : BaseRepository, IRotaRepository
     {
         public RotaRepository(RotaDbContext context) : base(context)
         {

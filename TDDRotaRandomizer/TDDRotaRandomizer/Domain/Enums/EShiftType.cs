@@ -2,7 +2,7 @@
 
 namespace RotaRandomizer.Models
 {
-    public enum ShiftTypeEnum
+    public enum EShiftType
     {
         [Description("Morning")]
         Morning = 1,

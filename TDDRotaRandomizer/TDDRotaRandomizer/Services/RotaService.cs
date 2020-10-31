@@ -8,13 +8,13 @@ using RotaRandomizer.Models;
 
 namespace RotaRandomizer.Services
 {
-    public class RotaService : RotaServiceInterface
+    public class RotaService : IRotaService
     {
-        private readonly RotaRepositoryInterface _rotaRepository;
+        private readonly IRotaRepository _rotaRepository;
 
-        public RotaService(RotaRepositoryInterface rotaRepository)
+        public RotaService(IRotaRepository rotaRepository)
         {
-            this._rotaRepository = rotaRepository;
+            _rotaRepository = rotaRepository;
         }
 
         public async Task<IEnumerable<Rota>> ListAsync()
