@@ -1,0 +1,10 @@
+C:\Users\patricia\source\repos\TDDRotaRandomizer\TDDRotaRandomizer\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\patricia\source\repos\TDDRotaRandomizer\TDDRotaRandomizer\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\patricia\source\repos\TDDRotaRandomizer\TDDRotaRandomizer\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\patricia\source\repos\TDDRotaRandomizer\TDDRotaRandomizer\bin\Debug\netcoreapp3.1\TDDRotaRandomizer.exe
+C:\Users\patricia\source\repos\TDDRotaRandomizer\TDDRotaRandomizer\obj\Debug\netcoreapp3.1\TDDRotaRandomizer.csprojAssemblyReference.cache
+C:\Users\patricia\source\repos\TDDRotaRandomizer\TDDRotaRandomizer\obj\Debug\netcoreapp3.1\TDDRotaRandomizer.AssemblyInfoInputs.cache
+C:\Users\patricia\source\repos\TDDRotaRandomizer\TDDRotaRandomizer\obj\Debug\netcoreapp3.1\TDDRotaRandomizer.AssemblyInfo.cs
+C:\Users\patricia\source\repos\TDDRotaRandomizer\TDDRotaRandomizer\obj\Debug\netcoreapp3.1\TDDRotaRandomizer.RazorTargetAssemblyInfo.cache
+C:\Users\patricia\source\repos\TDDRotaRandomizer\TDDRotaRandomizer\obj\Debug\netcoreapp3.1\staticwebassets\TDDRotaRandomizer.StaticWebAssets.Manifest.cache
+C:\Users\patricia\source\repos\TDDRotaRandomizer\TDDRotaRandomizer\obj\Debug\netcoreapp3.1\staticwebassets\TDDRotaRandomizer.StaticWebAssets.xml
