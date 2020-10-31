@@ -46,7 +46,10 @@ namespace RotaRandomizer
             services.AddScoped<IEmployeeService, EmployeeService>();
 
             services.AddScoped<IShiftRepository, ShiftRepository>();
-            services.AddScoped<IShiftService, ShiftService>(); 
+            services.AddScoped<IShiftService, ShiftService>();
+
+            services.AddScoped<IConfigRepository, ConfigRepository>();
+            services.AddScoped<IConfigService, ConfigService>();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using RotaRandomizer.Models;
+using RotaRandomizer.Domain.Models;
 
 namespace RotaRandomizer.Persistence.Contexts
 {
@@ -15,6 +16,7 @@ namespace RotaRandomizer.Persistence.Contexts
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Rota> Rotas { get; set; }
         public DbSet<Shift> Shifts { get; set; }
+        public DbSet<Config> Configurations { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -32,6 +34,12 @@ namespace RotaRandomizer.Persistence.Contexts
                new Employee { Id = 8, Name = "Jennifer", EmployeeNumber = "E890" },
                new Employee { Id = 9, Name = "Jasper", EmployeeNumber = "E901" },
                new Employee { Id = 10, Name = "Joselyn", EmployeeNumber = "E012" }
+           );
+
+            builder.Entity<Config>().HasData
+           (
+               new Config { Id = 1, Description = "Day of week where rota starts", Value = (double) DayOfWeek.Monday, Code = "RotaStart" }, 
+               new Config { Id = 2, Description = "Rota duration in working days", Value = 10, Code = "RotaDuration" }
            );
 
         }

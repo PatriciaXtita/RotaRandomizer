@@ -12,11 +12,13 @@ namespace RotaRandomizer.Services
     {
         private readonly IShiftRepository _shiftRepository;
         private readonly IEmployeeService _employeeService;
+        private readonly IConfigService _configService;
 
-        public ShiftService(IShiftRepository shiftRepository, IEmployeeService employeeService)
+        public ShiftService(IShiftRepository shiftRepository, IEmployeeService employeeService, IConfigService configService)
         {
             _shiftRepository = shiftRepository;
             _employeeService = employeeService;
+            _configService = configService;
         }
 
         public async Task<IEnumerable<Shift>> ListAsync()
@@ -31,9 +33,7 @@ namespace RotaRandomizer.Services
             List<Employee> employeesWithTwoShifts = new List<Employee>();
             while (start <= end)
             {
-                List<DayOfWeek> nonWorkingDays = new List<DayOfWeek>(); //TODO - put nonWorkingDays configurable
-                nonWorkingDays.Add(DayOfWeek.Saturday);
-                nonWorkingDays.Add(DayOfWeek.Sunday);
+                List<DayOfWeek> nonWorkingDays = _configService.GetNonWorkingDays().ToList();
 
                 if (!nonWorkingDays.Contains(start.DayOfWeek))
                 {

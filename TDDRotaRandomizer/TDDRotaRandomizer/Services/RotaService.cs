@@ -15,13 +15,15 @@ namespace RotaRandomizer.Services
     {
         private readonly IRotaRepository _rotaRepository;
         private readonly IShiftService _shiftService;
+        private readonly IConfigService _configService;
         private readonly IUnitOfWork _unitOfWork;
 
-        public RotaService(IRotaRepository rotaRepository, IShiftService shiftService, IUnitOfWork unitOfWork)
+        public RotaService(IRotaRepository rotaRepository, IShiftService shiftService, IUnitOfWork unitOfWork, IConfigService configService)
         {
             _rotaRepository = rotaRepository;
             _shiftService = shiftService;
             _unitOfWork = unitOfWork;
+            _configService = configService;
         }
 
 
@@ -34,7 +36,8 @@ namespace RotaRandomizer.Services
         {
             try
             {    //Find the beginning and end date of next Rota
-                DateTime beginningOfRotaDay = getRotaStart(rota.Start, DayOfWeek.Monday);   //TODO - put this day of week configurable              
+                DayOfWeek startDayOfWeek = (DayOfWeek)Convert.ToInt32((await _configService.GetAsyncRotaStart()).Value);
+                DateTime beginningOfRotaDay = GetRotaStart(rota.Start, startDayOfWeek);
 
                 Rota existingRota = _rotaRepository.Find(beginningOfRotaDay);
                 if (existingRota != null)
@@ -42,11 +45,10 @@ namespace RotaRandomizer.Services
                     return new CreateRotaResponse(existingRota);
                 }
 
-                DateTime endOfRotaDay = getRotaEnd(beginningOfRotaDay);
+                DateTime endOfRotaDay = await GetRotaEnd(beginningOfRotaDay);
                 rota.Start = beginningOfRotaDay;
                 rota.End = endOfRotaDay;
 
-                //Create Shifts for this Rota  TODO          
                 rota.Shifts = await _shiftService.CreateShiftsForRota(beginningOfRotaDay, endOfRotaDay);
 
                 await _rotaRepository.AddAsync(rota);
@@ -60,14 +62,12 @@ namespace RotaRandomizer.Services
             }
         }
 
-        private DateTime getRotaEnd(DateTime beginningOfRotaDay)
+        private async Task<DateTime> GetRotaEnd(DateTime beginningOfRotaDay)
         {
             DateTime result = beginningOfRotaDay;
-            List<DayOfWeek> nonWorkingDays = new List<DayOfWeek>(); //TODO - put nonWorkingDays configurable
-            nonWorkingDays.Add(DayOfWeek.Saturday);
-            nonWorkingDays.Add(DayOfWeek.Sunday);
+            List<DayOfWeek> nonWorkingDays = _configService.GetNonWorkingDays().ToList();
 
-            int rotaWorkingDays = 10; //TODO - make it configurable
+            int rotaWorkingDays = Convert.ToInt32((await _configService.GetAsyncRotaDuration()).Value);
 
             int rotaDuration = 1;
             while (rotaDuration < rotaWorkingDays)
@@ -79,7 +79,7 @@ namespace RotaRandomizer.Services
             return result;
         }
 
-        private DateTime getRotaStart(DateTime date, DayOfWeek dayofWeekStart)
+        private DateTime GetRotaStart(DateTime date, DayOfWeek dayofWeekStart)
         {
             DateTime result = date.Date;
             while (result.DayOfWeek != dayofWeekStart)
