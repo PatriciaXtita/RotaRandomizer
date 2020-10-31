@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace TDDRotaRandomizer.Models
+namespace RotaRandomizer.Models
 {
     public enum ShiftTypeEnum
     {

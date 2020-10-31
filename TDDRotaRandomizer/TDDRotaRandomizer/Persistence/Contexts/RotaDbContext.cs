@@ -3,17 +3,18 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TDDRotaRandomizer.Models;
+using RotaRandomizer.Models;
 
-namespace TDDRotaRandomizer.Persistence.Contexts
+namespace RotaRandomizer.Persistence.Contexts
 {
     public class RotaDbContext : DbContext
     {
+              
+        public RotaDbContext(DbContextOptions<RotaDbContext> options) : base(options) { }
 
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Rota> Rotas { get; set; }
         public DbSet<Shift> Shifts { get; set; }
-        public RotaDbContext(DbContextOptions<RotaDbContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

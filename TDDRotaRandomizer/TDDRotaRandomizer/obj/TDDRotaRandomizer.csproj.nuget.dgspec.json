@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\patricia\\source\\repos\\TDDRotaRandomizer\\TDDRotaRandomizer\\TDDRotaRandomizer.csproj": {}
+    "C:\\Users\\patricia\\Documents\\GitHub\\RotaRandomizer\\TDDRotaRandomizer\\TDDRotaRandomizer\\TDDRotaRandomizer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\patricia\\source\\repos\\TDDRotaRandomizer\\TDDRotaRandomizer\\TDDRotaRandomizer.csproj": {
+    "C:\\Users\\patricia\\Documents\\GitHub\\RotaRandomizer\\TDDRotaRandomizer\\TDDRotaRandomizer\\TDDRotaRandomizer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\patricia\\source\\repos\\TDDRotaRandomizer\\TDDRotaRandomizer\\TDDRotaRandomizer.csproj",
+        "projectUniqueName": "C:\\Users\\patricia\\Documents\\GitHub\\RotaRandomizer\\TDDRotaRandomizer\\TDDRotaRandomizer\\TDDRotaRandomizer.csproj",
         "projectName": "TDDRotaRandomizer",
-        "projectPath": "C:\\Users\\patricia\\source\\repos\\TDDRotaRandomizer\\TDDRotaRandomizer\\TDDRotaRandomizer.csproj",
+        "projectPath": "C:\\Users\\patricia\\Documents\\GitHub\\RotaRandomizer\\TDDRotaRandomizer\\TDDRotaRandomizer\\TDDRotaRandomizer.csproj",
         "packagesPath": "C:\\Users\\patricia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\patricia\\source\\repos\\TDDRotaRandomizer\\TDDRotaRandomizer\\obj\\",
+        "outputPath": "C:\\Users\\patricia\\Documents\\GitHub\\RotaRandomizer\\TDDRotaRandomizer\\TDDRotaRandomizer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -45,6 +45,28 @@
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[3.2.3, )"
             }
           },
           "imports": [

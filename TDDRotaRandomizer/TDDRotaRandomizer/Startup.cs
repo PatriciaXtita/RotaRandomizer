@@ -6,12 +6,14 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using RotaRandomizer.Persistence.Contexts;
 
-namespace TDDRotaRandomizer
+namespace RotaRandomizer
 {
     public class Startup
     {
@@ -26,6 +28,15 @@ namespace TDDRotaRandomizer
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            var connection = Configuration["MySQLConnection:MySqlConnectionString"];
+            services.AddDbContext<RotaDbContext>(options =>
+                options.UseMySql(connection)
+            );
+            services.AddMvc();
+
+            services.AddScoped<Domain.Repositories.RotaRepositoryInterface, Persistence.Repositories.RotaRepository>();
+            services.AddScoped<Domain.Services.RotaServiceInterface, Services.RotaService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
