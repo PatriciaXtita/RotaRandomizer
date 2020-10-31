@@ -20,5 +20,11 @@ namespace RotaRandomizer.Persistence.Repositories
             return await _context.Rotas.ToListAsync();
         }
 
+        public async Task AddAsync(Rota rota)
+        {
+
+            await _context.Rotas.AddAsync(rota);
+        }
+
     }
 }

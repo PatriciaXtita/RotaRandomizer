@@ -9,7 +9,7 @@ namespace RotaRandomizer.Persistence.Contexts
 {
     public class RotaDbContext : DbContext
     {
-              
+
         public RotaDbContext(DbContextOptions<RotaDbContext> options) : base(options) { }
 
         public DbSet<Employee> Employees { get; set; }
@@ -19,6 +19,21 @@ namespace RotaRandomizer.Persistence.Contexts
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            builder.Entity<Employee>().HasData
+           (
+               new Employee { Id = 1, Name = "John", EmployeeNumber = "E123" },
+               new Employee { Id = 2, Name = "Jane", EmployeeNumber = "E234" },
+               new Employee { Id = 3, Name = "Jamie", EmployeeNumber = "E345" },
+               new Employee { Id = 4, Name = "Janette", EmployeeNumber = "E456" },
+               new Employee { Id = 5, Name = "Joshua", EmployeeNumber = "E567" },
+               new Employee { Id = 6, Name = "Jack", EmployeeNumber = "E678" },
+               new Employee { Id = 7, Name = "Jeremy", EmployeeNumber = "E789" },
+               new Employee { Id = 8, Name = "Jennifer", EmployeeNumber = "E890" },
+               new Employee { Id = 9, Name = "Jasper", EmployeeNumber = "E901" },
+               new Employee { Id = 10, Name = "Joselyn", EmployeeNumber = "E012" }
+           );
+
         }
 
 

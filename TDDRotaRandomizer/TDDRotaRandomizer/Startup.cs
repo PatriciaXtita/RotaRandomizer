@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -45,7 +46,11 @@ namespace RotaRandomizer
             services.AddScoped<IEmployeeService, EmployeeService>();
 
             services.AddScoped<IShiftRepository, ShiftRepository>();
-            services.AddScoped<IShiftService, ShiftService>();
+            services.AddScoped<IShiftService, ShiftService>(); 
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            services.AddAutoMapper(typeof(Startup));
 
         }
 
