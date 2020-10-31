@@ -9,6 +9,6 @@ namespace RotaRandomizer.Domain.Services
     public interface IEmployeeService
     {
         Task<IEnumerable<Employee>> ListAsync();
-        Employee GetEmployeeForShift(Employee previousShiftEmployee, IEnumerable<Employee> employeesWithTwoShifts);
+        Task<Employee> GetEmployeeForShift(Employee previousShiftEmployee, IEnumerable<Employee> employeesWithTwoShifts);
     }
 }

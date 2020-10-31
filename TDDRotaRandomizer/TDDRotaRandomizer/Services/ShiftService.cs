@@ -37,34 +37,34 @@ namespace RotaRandomizer.Services
 
                 if (!nonWorkingDays.Contains(start.DayOfWeek))
                 {
-                    //Create 2 shifts
                     Shift morning = new Shift();
                     morning.Start = start;
                     morning.End = start.AddDays(0.5);
                     morning.ShiftType = EShiftType.Morning;
-                    Employee morningEmployee = _employeeService.GetEmployeeForShift(previousShiftEmployee, employeesWithTwoShifts);
+                    Employee morningEmployee = await _employeeService.GetEmployeeForShift(previousShiftEmployee, employeesWithTwoShifts);
                     morning.ShiftEmployee = morningEmployee;
                     previousShiftEmployee = morningEmployee;
+                    if (shiftsCreated.Select(e => e.ShiftEmployee).ToList().Contains(morningEmployee))
+                        employeesWithTwoShifts.Add(morningEmployee);
+                    shiftsCreated.Add(morning);
+
                     Shift afternoon = new Shift();
                     afternoon.Start = morning.End;
                     afternoon.End = afternoon.Start.AddDays(0.5);
                     afternoon.ShiftType = EShiftType.Afternoon;
-                    Employee afternoonEmployee = _employeeService.GetEmployeeForShift(previousShiftEmployee, employeesWithTwoShifts);
+                    Employee afternoonEmployee = await _employeeService.GetEmployeeForShift(previousShiftEmployee, employeesWithTwoShifts);
                     afternoon.ShiftEmployee = afternoonEmployee;
                     previousShiftEmployee = afternoonEmployee;
-                    shiftsCreated.Add(morning);                   
+                    if (shiftsCreated.Select(e => e.ShiftEmployee).ToList().Contains(afternoonEmployee))
+                        employeesWithTwoShifts.Add(afternoonEmployee);
                     shiftsCreated.Add(afternoon);
                 }
                 start = start.AddDays(1);
             }
-            //ForEach Shift Assign an Employee to work in it
-            setEmployees();
-
             await _shiftRepository.AddListAsync(shiftsCreated);
-
             return shiftsCreated;
         }
 
-       
+
     }
 }
