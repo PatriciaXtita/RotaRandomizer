@@ -9,5 +9,7 @@ namespace RotaRandomizer.Domain.Repositories
     public interface IShiftRepository
     {
         Task<IEnumerable<Shift>> ListAsync();
+        Task AddAsync(Shift morning);
+        Task AddListAsync(IEnumerable<Shift> shiftsCreated);
     }
 }

@@ -15,6 +15,22 @@ namespace RotaRandomizer.Persistence.Repositories
         {
         }
 
+        public async Task AddAsync(Shift shift)
+        {
+            await _context.Shifts.AddAsync(shift);
+        }
+
+
+        public async Task AddListAsync(IEnumerable<Shift> shifts)
+        {
+            foreach (Shift shift in shifts)
+            {
+                await AddAsync(shift);
+            }
+        }
+
+      
+
         public async Task<IEnumerable<Shift>> ListAsync()
         {
             return await _context.Shifts.ToListAsync();

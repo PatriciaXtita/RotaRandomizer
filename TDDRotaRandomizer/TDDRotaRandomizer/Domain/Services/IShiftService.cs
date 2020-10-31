@@ -9,5 +9,6 @@ namespace RotaRandomizer.Domain.Services
     public interface IShiftService
     {
         Task<IEnumerable<Shift>> ListAsync();
+        Task<IEnumerable<Shift>> CreateShiftsForRota(DateTime beginningOfRotaDay, DateTime endOfRotaDay);
     }
 }

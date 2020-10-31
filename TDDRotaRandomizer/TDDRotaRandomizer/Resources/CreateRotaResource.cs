@@ -9,6 +9,6 @@ namespace RotaRandomizer.Resources
     public class CreateRotaResource
     {
         [Required]
-        public DateTime Date { get; set; }
+        public DateTime Start { get; set; }
     }
 }

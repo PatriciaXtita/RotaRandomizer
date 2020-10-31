@@ -10,6 +10,6 @@ namespace RotaRandomizer.Models
         public int Id { get; set; }
         public DateTime Start { get; set; }
         public DateTime End { get; set; }
-        public IList<Shift> Shifts { get; set; } = new List<Shift>();
+        public IEnumerable<Shift> Shifts { get; set; } = new List<Shift>();
     }
 }

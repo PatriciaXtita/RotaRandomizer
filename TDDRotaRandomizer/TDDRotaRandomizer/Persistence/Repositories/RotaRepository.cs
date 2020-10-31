@@ -26,5 +26,17 @@ namespace RotaRandomizer.Persistence.Repositories
             await _context.Rotas.AddAsync(rota);
         }
 
+
+        public Rota Find(DateTime start)
+        {
+            if(_context.Rotas.Where(r => r.Start.Equals(start)).Any())
+            {
+                return _context.Rotas.Where(r => r.Start.Equals(start)).First();
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

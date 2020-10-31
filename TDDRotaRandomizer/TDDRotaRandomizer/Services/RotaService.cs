@@ -33,15 +33,21 @@ namespace RotaRandomizer.Services
         public async Task<CreateRotaResponse> SaveAsync(Rota rota)
         {
             try
-            {
-                //Find the beginning and end date of next Rota
-                DateTime beginningOfRotaDay = getRotaStart(rota.Start, DayOfWeek.Monday);   //TODO - put this day of week configurable
+            {    //Find the beginning and end date of next Rota
+                DateTime beginningOfRotaDay = getRotaStart(rota.Start, DayOfWeek.Monday);   //TODO - put this day of week configurable              
+
+                Rota existingRota = _rotaRepository.Find(beginningOfRotaDay);
+                if (existingRota != null)
+                {
+                    return new CreateRotaResponse(existingRota);
+                }
+
                 DateTime endOfRotaDay = getRotaEnd(beginningOfRotaDay);
                 rota.Start = beginningOfRotaDay;
                 rota.End = endOfRotaDay;
 
                 //Create Shifts for this Rota  TODO          
-                //rota.Shifts = shiftService.CreateShiftsForRota(beginningOfRotaDay, endOfRotaDay);
+                rota.Shifts = await _shiftService.CreateShiftsForRota(beginningOfRotaDay, endOfRotaDay);
 
                 await _rotaRepository.AddAsync(rota);
                 await _unitOfWork.CompleteAsync();
@@ -66,7 +72,7 @@ namespace RotaRandomizer.Services
             int rotaDuration = 1;
             while (rotaDuration < rotaWorkingDays)
             {
-                result.AddDays(1);
+                result = result.AddDays(1);
                 if (!nonWorkingDays.Contains(result.DayOfWeek))
                     rotaDuration++;
             }
@@ -78,7 +84,7 @@ namespace RotaRandomizer.Services
             DateTime result = date.Date;
             while (result.DayOfWeek != dayofWeekStart)
             {
-                result.AddDays(1);
+                result = result.AddDays(1);
             }
             return result;
         }

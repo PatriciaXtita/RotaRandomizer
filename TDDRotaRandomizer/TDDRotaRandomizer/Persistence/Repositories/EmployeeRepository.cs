@@ -15,6 +15,11 @@ namespace RotaRandomizer.Persistence.Repositories
         {
         }
 
+        public async Task<IEnumerable<Employee>> GetAllEmployees()
+        {
+            return await _context.Employees.ToListAsync();
+        }
+
         public async Task<IEnumerable<Employee>> ListAsync()
         {
             return await _context.Employees.ToListAsync();

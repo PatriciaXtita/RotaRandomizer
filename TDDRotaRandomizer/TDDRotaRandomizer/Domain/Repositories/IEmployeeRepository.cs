@@ -9,5 +9,6 @@ namespace RotaRandomizer.Domain.Repositories
     public interface IEmployeeRepository
     {
         Task<IEnumerable<Employee>> ListAsync();
+        Task<IEnumerable<Employee>> GetAllEmployees();
     }
 }

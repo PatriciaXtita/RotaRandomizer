@@ -11,6 +11,6 @@ namespace RotaRandomizer.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string EmployeeNumber { get; set; }
-        public IList<Shift> WorkingShifts { get; set; } = new List<Shift>();
+        public IEnumerable<Shift> WorkingShifts { get; set; } = new List<Shift>();
     }
 }
