@@ -30,7 +30,14 @@ namespace RotaRandomizer.Services
             employees.RemoveAll(e => employeesWithTwoShifts.Contains(e));
             var random = new Random();
             int index = random.Next(employees.Count);
-            return employees.ElementAt(index);
+            if (employees.Any())
+            {
+                return employees.ElementAt(index);
+            }
+            else
+            {
+                return null;
+            }
 
         }
 

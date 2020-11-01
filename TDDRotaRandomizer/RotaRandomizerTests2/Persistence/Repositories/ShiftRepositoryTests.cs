@@ -21,7 +21,7 @@ namespace RotaRandomizer.Persistence.Repositories.Tests
         private IUnitOfWork _unitOfWork;
 
         [TestInitialize]
-        public void Initialize()
+        public void InitializeTest()
         {
             var options = new DbContextOptionsBuilder<RotaDbContext>()
               .UseInMemoryDatabase("TestShiftRepository")
@@ -34,7 +34,7 @@ namespace RotaRandomizer.Persistence.Repositories.Tests
         }
 
         [TestCleanup]
-        public void Dispose()
+        public void DisposeTest()
         {
             _context.Database.EnsureDeleted();
             _context.Dispose();

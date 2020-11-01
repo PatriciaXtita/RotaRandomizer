@@ -15,13 +15,13 @@ using Xunit.Sdk;
 namespace RotaRandomizer.Persistence.Repositories.Tests
 {
     [TestClass()]
-    public class EmployeeRepositoryTests : IDisposable
+    public class EmployeeRepositoryTests
     {
         private RotaDbContext _context;
         private IEmployeeRepository _employeeRepository;
 
         [TestInitialize]
-        public void Initialize()
+        public void InitializeTest()
         {
             var options = new DbContextOptionsBuilder<RotaDbContext>()
                         .UseInMemoryDatabase("TestEmployeeRepository")
@@ -34,7 +34,7 @@ namespace RotaRandomizer.Persistence.Repositories.Tests
         }
 
         [TestCleanup]
-        public void Dispose()
+        public void DisposeTest()
         {
             _context.Database.EnsureDeleted();
             _context.Dispose();

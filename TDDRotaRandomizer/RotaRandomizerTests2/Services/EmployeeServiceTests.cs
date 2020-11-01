@@ -22,12 +22,13 @@ namespace RotaRandomizer.Services.Tests
         private IEmployeeRepository _employeeRepository;
         private IEmployeeService _employeeService;
 
-        [ClassInitialize]
-        public void ClassSetUp()
+
+        [TestInitialize]
+        public void InitializeTest()
         {
             var options = new DbContextOptionsBuilder<RotaDbContext>()
-               .UseInMemoryDatabase("RotaRandomizer")
-               .Options;
+        .UseInMemoryDatabase("EmployeeServiceTest")
+        .Options;
             _context = new RotaDbContext(options);
             _context.Employees.Add(new Employee { Id = 1, Name = "John", EmployeeNumber = "E123" });
             _context.Employees.Add(new Employee { Id = 2, Name = "Jane", EmployeeNumber = "E234" });
@@ -44,13 +45,12 @@ namespace RotaRandomizer.Services.Tests
             _employeeService = new EmployeeService(_employeeRepository);
         }
 
-
-        [ClassCleanup]
-        public void TearDown()
+        [TestCleanup]
+        public void DisposeTest()
         {
+            _context.Database.EnsureDeleted();
             _context.Dispose();
         }
-
 
         [TestMethod()]
         public async Task ListAsyncTest()
@@ -90,7 +90,7 @@ namespace RotaRandomizer.Services.Tests
             while (chosen != null)
             {
                 employeesWithTwoShifts.Add(chosen);
-                chosen = await _employeeService.GetEmployeeForShift(previousShiftEmployee, employeesWithTwoShifts);                
+                chosen = await _employeeService.GetEmployeeForShift(previousShiftEmployee, employeesWithTwoShifts);
             }
             Assert.AreEqual(totalEmployees, employeesWithTwoShifts.Count);
         }
