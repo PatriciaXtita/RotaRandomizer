@@ -39,7 +39,7 @@ namespace RotaRandomizer.Services
                 DayOfWeek startDayOfWeek = (DayOfWeek)Convert.ToInt32((await _configService.GetAsyncRotaStart()).Value);
                 DateTime beginningOfRotaDay = GetRotaStart(rota.Start, startDayOfWeek);
 
-                Rota existingRota = _rotaRepository.Find(beginningOfRotaDay);
+                Rota existingRota = await _rotaRepository.Find(beginningOfRotaDay);
                 if (existingRota != null)
                 {
                     return new CreateRotaResponse(existingRota);

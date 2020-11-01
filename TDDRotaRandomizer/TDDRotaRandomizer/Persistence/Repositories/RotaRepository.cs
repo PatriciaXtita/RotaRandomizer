@@ -27,11 +27,11 @@ namespace RotaRandomizer.Persistence.Repositories
         }
 
 
-        public Rota Find(DateTime start)
+        public async Task<Rota> Find(DateTime start)
         {
             if(_context.Rotas.Where(r => r.Start.Equals(start)).Any())
             {
-                return _context.Rotas.Where(r => r.Start.Equals(start)).First();
+                return await _context.Rotas.Where(r => r.Start.Equals(start)).FirstAsync();
             }
             else
             {
