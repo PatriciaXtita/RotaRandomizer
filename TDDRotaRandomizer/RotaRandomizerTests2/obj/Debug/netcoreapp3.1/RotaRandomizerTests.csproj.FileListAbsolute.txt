@@ -89,9 +89,6 @@ C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomiz
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\bin\Debug\netcoreapp3.1\System.Text.Json.dll
-C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\bin\Debug\netcoreapp3.1\xunit.abstractions.dll
-C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\bin\Debug\netcoreapp3.1\xunit.core.dll
-C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\bin\Debug\netcoreapp3.1\xunit.execution.dotnet.dll
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
@@ -232,10 +229,14 @@ C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomiz
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\bin\Debug\netcoreapp3.1\RotaRandomizer.dll
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\bin\Debug\netcoreapp3.1\RotaRandomizer.pdb
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\obj\Debug\netcoreapp3.1\RotaRandomizerTests.csprojAssemblyReference.cache
-C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\obj\Debug\netcoreapp3.1\RotaRandomizerTests.csproj.CoreCompileInputs.cache
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\obj\Debug\netcoreapp3.1\RotaRandomizerTests.AssemblyInfoInputs.cache
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\obj\Debug\netcoreapp3.1\RotaRandomizerTests.AssemblyInfo.cs
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\obj\Debug\netcoreapp3.1\RotaRandomizerTests.csproj.CopyComplete
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\obj\Debug\netcoreapp3.1\RotaRandomizerTests.dll
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\obj\Debug\netcoreapp3.1\RotaRandomizerTests.pdb
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\obj\Debug\netcoreapp3.1\RotaRandomizerTests.genruntimeconfig.cache
+C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\bin\Debug\netcoreapp3.1\xunit.abstractions.dll
+C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\bin\Debug\netcoreapp3.1\xunit.assert.dll
+C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\bin\Debug\netcoreapp3.1\xunit.core.dll
+C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\bin\Debug\netcoreapp3.1\xunit.execution.dotnet.dll
+C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\obj\Debug\netcoreapp3.1\RotaRandomizerTests.csproj.CoreCompileInputs.cache

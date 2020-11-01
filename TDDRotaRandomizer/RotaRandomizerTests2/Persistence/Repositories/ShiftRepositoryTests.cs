@@ -18,19 +18,26 @@ namespace RotaRandomizer.Persistence.Repositories.Tests
     {
         private RotaDbContext _context;
         private IShiftRepository _shiftRepository;
-        private readonly IUnitOfWork _unitOfWork;
+        private IUnitOfWork _unitOfWork;
 
-
-        public ShiftRepositoryTests()
+        [TestInitialize]
+        public void Initialize()
         {
             var options = new DbContextOptionsBuilder<RotaDbContext>()
-            .UseInMemoryDatabase("RotaRandomizer")
-            .Options;
+              .UseInMemoryDatabase("TestShiftRepository")
+              .Options;
             _context = new RotaDbContext(options);
             _context.Shifts.Add(new Shift { Id = 1, Start = DateTime.Now, End = DateTime.Now.AddHours(8), ShiftType = EShiftType.Afternoon });
             _context.SaveChanges();
             _shiftRepository = new ShiftRepository(_context);
             _unitOfWork = new UnitOfWork(_context);
+        }
+
+        [TestCleanup]
+        public void Dispose()
+        {
+            _context.Database.EnsureDeleted();
+            _context.Dispose();
         }
 
         [TestMethod()]
@@ -66,6 +73,6 @@ namespace RotaRandomizer.Persistence.Repositories.Tests
             Assert.AreEqual(4, shiftsAfterInsert.Count);
         }
 
-       
+
     }
 }

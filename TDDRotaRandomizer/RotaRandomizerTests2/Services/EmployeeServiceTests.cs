@@ -45,7 +45,7 @@ namespace RotaRandomizer.Services.Tests
         }
 
 
-        [ClassInitialize]
+        [ClassCleanup]
         public void TearDown()
         {
             _context.Dispose();

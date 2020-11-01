@@ -15,27 +15,34 @@ using Xunit.Sdk;
 namespace RotaRandomizer.Persistence.Repositories.Tests
 {
     [TestClass()]
-    public class EmployeeRepositoryTests
+    public class EmployeeRepositoryTests : IDisposable
     {
         private RotaDbContext _context;
         private IEmployeeRepository _employeeRepository;
 
-        public EmployeeRepositoryTests()
+        [TestInitialize]
+        public void Initialize()
         {
             var options = new DbContextOptionsBuilder<RotaDbContext>()
-                        .UseInMemoryDatabase("RotaRandomizer")
+                        .UseInMemoryDatabase("TestEmployeeRepository")
                         .Options;
             _context = new RotaDbContext(options);
             _context.Employees.Add(new Employee { Id = 1, Name = "John", EmployeeNumber = "E123" });
             _context.Employees.Add(new Employee { Id = 2, Name = "Jane", EmployeeNumber = "E234" });
             _context.SaveChanges();
             _employeeRepository = new EmployeeRepository(_context);
+        }
 
+        [TestCleanup]
+        public void Dispose()
+        {
+            _context.Database.EnsureDeleted();
+            _context.Dispose();
         }
 
         [TestMethod()]
         public async Task ListAsyncTest()
-        {            
+        {
             List<Employee> employees = (await _employeeRepository.ListAsync()).ToList();
             Assert.AreEqual(2, employees.Count);
             Assert.AreEqual("John", employees[0].Name);

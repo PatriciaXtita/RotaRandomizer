@@ -18,18 +18,27 @@ namespace RotaRandomizer.Persistence.Repositories.Tests
     {
         private RotaDbContext _context;
         private IRotaRepository _rotaRepository;
-        private readonly IUnitOfWork _unitOfWork;
+        private IUnitOfWork _unitOfWork;
 
-        public RotaRepositoryTests()
+
+        [TestInitialize]
+        public void Initialize()
         {
             var options = new DbContextOptionsBuilder<RotaDbContext>()
-            .UseInMemoryDatabase("RotaRandomizer")
+            .UseInMemoryDatabase("TestRotaRepository")
             .Options;
             _context = new RotaDbContext(options);
             _context.Rotas.Add(new Rota { Id = 1, Start = DateTime.Now, End = DateTime.Now.AddDays(14) });
             _context.SaveChanges();
             _rotaRepository = new RotaRepository(_context);
             _unitOfWork = new UnitOfWork(_context);
+        }
+
+        [TestCleanup]
+        public void Dispose()
+        {
+            _context.Database.EnsureDeleted();
+            _context.Dispose();
         }
 
         [TestMethod()]
@@ -43,7 +52,7 @@ namespace RotaRandomizer.Persistence.Repositories.Tests
         public async Task AddAsyncTest()
         {
             Rota rota = new Rota { Id = 3, Start = DateTime.Now.AddMonths(2), End = DateTime.Now.AddMonths(2).AddDays(14) };
-            await _rotaRepository.AddAsync(rota); 
+            await _rotaRepository.AddAsync(rota);
             await _unitOfWork.CompleteAsync();
             List<Rota> rotas = (await _rotaRepository.ListAsync()).ToList();
             Assert.AreEqual(2, rotas.Count);
