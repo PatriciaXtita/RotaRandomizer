@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HraNvBVAVUumwSl5ZXoa3n+Il1si/0NpZHXY+XYH/Rfy2nyzu8F4PzJHQML39Tf7ZLQ+k2pHIssHvy/+0TvZkg==",
+  "dgSpecHash": "18t2dMZ4WETTrVjQ1BQvtynR1ns2JTpmGK4Jiwbemh+s1RseXtkHkOg4eON4uS5mX3Ghr4QktnazO3VcdGnfLA==",
   "success": true,
   "projectFilePath": "C:\\Users\\patricia\\Documents\\GitHub\\RotaRandomizer\\TDDRotaRandomizer\\RotaRandomizerTests2\\RotaRandomizerTests.csproj",
   "expectedPackageFiles": [
@@ -28,6 +28,7 @@
     "C:\\Users\\patricia\\.nuget\\packages\\microsoft.entityframeworkcore\\3.1.9\\microsoft.entityframeworkcore.3.1.9.nupkg.sha512",
     "C:\\Users\\patricia\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\3.1.9\\microsoft.entityframeworkcore.abstractions.3.1.9.nupkg.sha512",
     "C:\\Users\\patricia\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\3.1.9\\microsoft.entityframeworkcore.analyzers.3.1.9.nupkg.sha512",
+    "C:\\Users\\patricia\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\3.1.9\\microsoft.entityframeworkcore.inmemory.3.1.9.nupkg.sha512",
     "C:\\Users\\patricia\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.9\\microsoft.entityframeworkcore.relational.3.1.9.nupkg.sha512",
     "C:\\Users\\patricia\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite\\3.1.9\\microsoft.entityframeworkcore.sqlite.3.1.9.nupkg.sha512",
     "C:\\Users\\patricia\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite.core\\3.1.9\\microsoft.entityframeworkcore.sqlite.core.3.1.9.nupkg.sha512",

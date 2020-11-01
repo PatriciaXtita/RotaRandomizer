@@ -235,6 +235,7 @@ C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomiz
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\bin\Debug\netcoreapp3.1\RotaRandomizerTests.pdb
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\bin\Debug\netcoreapp3.1\Castle.Core.dll
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\bin\Debug\netcoreapp3.1\Moq.dll
-C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\obj\Debug\netcoreapp3.1\RotaRandomizerTests.csproj.CoreCompileInputs.cache
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\obj\Debug\netcoreapp3.1\RotaRandomizerTests.dll
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\obj\Debug\netcoreapp3.1\RotaRandomizerTests.pdb
+C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\RotaRandomizerTests2\obj\Debug\netcoreapp3.1\RotaRandomizerTests.csproj.CoreCompileInputs.cache

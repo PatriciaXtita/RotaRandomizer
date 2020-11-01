@@ -62,7 +62,7 @@ namespace RotaRandomizer.Services
             }
         }
 
-        private async Task<DateTime> GetRotaEnd(DateTime beginningOfRotaDay)
+        public async Task<DateTime> GetRotaEnd(DateTime beginningOfRotaDay)
         {
             DateTime result = beginningOfRotaDay;
             List<DayOfWeek> nonWorkingDays = _configService.GetNonWorkingDays().ToList();
@@ -79,7 +79,7 @@ namespace RotaRandomizer.Services
             return result;
         }
 
-        private DateTime GetRotaStart(DateTime date, DayOfWeek dayofWeekStart)
+        public DateTime GetRotaStart(DateTime date, DayOfWeek dayofWeekStart)
         {
             DateTime result = date.Date;
             while (result.DayOfWeek != dayofWeekStart)

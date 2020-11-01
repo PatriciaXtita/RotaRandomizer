@@ -13,10 +13,11 @@ namespace RotaRandomizer.Persistence.Contexts
 
         public RotaDbContext(DbContextOptions<RotaDbContext> options) : base(options) { }
 
-        public DbSet<Employee> Employees { get; set; }
-        public DbSet<Rota> Rotas { get; set; }
-        public DbSet<Shift> Shifts { get; set; }
-        public DbSet<Config> Configurations { get; set; }
+        public RotaDbContext() : base() { }
+        public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<Rota> Rotas { get; set; }
+        public virtual DbSet<Shift> Shifts { get; set; }
+        public virtual DbSet<Config> Configurations { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

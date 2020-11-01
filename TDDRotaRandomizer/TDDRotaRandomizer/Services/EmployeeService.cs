@@ -17,6 +17,7 @@ namespace RotaRandomizer.Services
             _employeeRepository = employeeRepository;
         }
 
+
         public async Task<IEnumerable<Employee>> ListAsync()
         {
             return await _employeeRepository.ListAsync();
@@ -24,7 +25,7 @@ namespace RotaRandomizer.Services
 
         public async Task<Employee> GetEmployeeForShift(Employee previousShiftEmployee, IEnumerable<Employee> employeesWithTwoShifts)
         {
-            List<Employee> employees = (await _employeeRepository.GetAllEmployees()).ToList();
+            List<Employee> employees = (await _employeeRepository.ListAsync()).ToList();
             employees.Remove(previousShiftEmployee);
             employees.RemoveAll(e => employeesWithTwoShifts.Contains(e));
             var random = new Random();
