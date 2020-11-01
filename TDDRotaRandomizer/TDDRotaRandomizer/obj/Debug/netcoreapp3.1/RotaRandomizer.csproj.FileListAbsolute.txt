@@ -7,6 +7,8 @@ C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\TDDRotaRando
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\TDDRotaRandomizer\bin\Debug\netcoreapp3.1\RotaRandomizer.runtimeconfig.dev.json
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\TDDRotaRandomizer\bin\Debug\netcoreapp3.1\RotaRandomizer.dll
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\TDDRotaRandomizer\bin\Debug\netcoreapp3.1\RotaRandomizer.pdb
+C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\TDDRotaRandomizer\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\TDDRotaRandomizer\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\TDDRotaRandomizer\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\TDDRotaRandomizer\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\TDDRotaRandomizer\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
@@ -144,6 +146,8 @@ C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\TDDRotaRando
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\TDDRotaRandomizer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\TDDRotaRandomizer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\TDDRotaRandomizer\obj\Debug\netcoreapp3.1\RotaRandomizer.csprojAssemblyReference.cache
+C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\TDDRotaRandomizer\obj\Debug\netcoreapp3.1\RotaRandomizer.csproj.CoreCompileInputs.cache
+C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\TDDRotaRandomizer\obj\Debug\netcoreapp3.1\RotaRandomizer.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\TDDRotaRandomizer\obj\Debug\netcoreapp3.1\RotaRandomizer.AssemblyInfoInputs.cache
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\TDDRotaRandomizer\obj\Debug\netcoreapp3.1\RotaRandomizer.AssemblyInfo.cs
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\TDDRotaRandomizer\obj\Debug\netcoreapp3.1\RotaRandomizer.RazorTargetAssemblyInfo.cache
@@ -153,7 +157,3 @@ C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\TDDRotaRando
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\TDDRotaRandomizer\obj\Debug\netcoreapp3.1\RotaRandomizer.dll
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\TDDRotaRandomizer\obj\Debug\netcoreapp3.1\RotaRandomizer.pdb
 C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\TDDRotaRandomizer\obj\Debug\netcoreapp3.1\RotaRandomizer.genruntimeconfig.cache
-C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\TDDRotaRandomizer\bin\Debug\netcoreapp3.1\AutoMapper.dll
-C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\TDDRotaRandomizer\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\TDDRotaRandomizer\obj\Debug\netcoreapp3.1\RotaRandomizer.csproj.CoreCompileInputs.cache
-C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\TDDRotaRandomizer\obj\Debug\netcoreapp3.1\RotaRandomizer.MvcApplicationPartsAssemblyInfo.cache
