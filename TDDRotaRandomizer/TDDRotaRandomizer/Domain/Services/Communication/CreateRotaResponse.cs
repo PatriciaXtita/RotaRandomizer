@@ -10,7 +10,7 @@ namespace RotaRandomizer.Domain.Services.Communication
     {
         public Rota Rota { get; private set; }
 
-        private CreateRotaResponse(bool success, string message, Rota rota) : base(success, message)
+        public CreateRotaResponse(bool success, string message, Rota rota) : base(success, message)
         {
             Rota = rota;
         }

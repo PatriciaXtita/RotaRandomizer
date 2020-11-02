@@ -42,7 +42,12 @@ namespace RotaRandomizer.Services
                 Rota existingRota = await _rotaRepository.Find(beginningOfRotaDay);
                 if (existingRota != null)
                 {
-                    return new CreateRotaResponse(existingRota);
+                    return new CreateRotaResponse(false, "Rota already exists", existingRota);
+                }
+                Rota inBetween = await InBetweenRotaAsyncTest(beginningOfRotaDay);
+                if (inBetween != null)
+                {
+                    return new CreateRotaResponse(false, "Rota already exists for this period", inBetween);
                 }
 
                 DateTime endOfRotaDay = await GetRotaEnd(beginningOfRotaDay);
@@ -54,12 +59,25 @@ namespace RotaRandomizer.Services
                 await _rotaRepository.AddAsync(rota);
                 await _unitOfWork.CompleteAsync();
 
-                return new CreateRotaResponse(rota);
+                return new CreateRotaResponse(true, "Created with Success", rota);
             }
             catch (Exception ex)
             {
                 return new CreateRotaResponse($"An error occurred when saving the rota: {ex.Message}");
             }
+        }
+
+        public async Task<Rota> InBetweenRotaAsyncTest(DateTime beginningOfRotaDay)
+        {
+            List<Rota> rotas = (await ListAsync()).ToList();
+            foreach (Rota rota in rotas)
+            {
+                if (rota.Start <= beginningOfRotaDay && rota.End >= beginningOfRotaDay)
+                {
+                    return rota;
+                }
+            }
+            return null;
         }
 
         public async Task<DateTime> GetRotaEnd(DateTime beginningOfRotaDay)

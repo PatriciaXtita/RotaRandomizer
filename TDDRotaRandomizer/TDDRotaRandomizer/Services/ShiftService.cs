@@ -31,6 +31,7 @@ namespace RotaRandomizer.Services
             List<Shift> shiftsCreated = new List<Shift>();
             Employee previousShiftEmployee = null;
             List<Employee> employeesWithTwoShifts = new List<Employee>();
+            List<Employee> employeesWithZeroShifts = (await _employeeService.ListAsync()).ToList();
             while (start <= end)
             {
                 List<DayOfWeek> nonWorkingDays = _configService.GetNonWorkingDays().ToList();
@@ -41,7 +42,8 @@ namespace RotaRandomizer.Services
                     morning.Start = start;
                     morning.End = start.AddDays(0.5);
                     morning.ShiftType = EShiftType.Morning;
-                    Employee morningEmployee = await _employeeService.GetEmployeeForShift(previousShiftEmployee, employeesWithTwoShifts);
+                    Employee morningEmployee = await _employeeService.GetEmployeeForShift(previousShiftEmployee, employeesWithTwoShifts, employeesWithZeroShifts);
+                    employeesWithZeroShifts.Remove(morningEmployee);
                     morning.ShiftEmployee = morningEmployee;
                     previousShiftEmployee = morningEmployee;
                     if (shiftsCreated.Select(e => e.ShiftEmployee).ToList().Contains(morningEmployee))
@@ -52,8 +54,9 @@ namespace RotaRandomizer.Services
                     afternoon.Start = morning.End;
                     afternoon.End = afternoon.Start.AddDays(0.5);
                     afternoon.ShiftType = EShiftType.Afternoon;
-                    Employee afternoonEmployee = await _employeeService.GetEmployeeForShift(previousShiftEmployee, employeesWithTwoShifts);
+                    Employee afternoonEmployee = await _employeeService.GetEmployeeForShift(previousShiftEmployee, employeesWithTwoShifts, employeesWithZeroShifts);
                     afternoon.ShiftEmployee = afternoonEmployee;
+                    employeesWithZeroShifts.Remove(afternoonEmployee);
                     previousShiftEmployee = afternoonEmployee;
                     if (shiftsCreated.Select(e => e.ShiftEmployee).ToList().Contains(afternoonEmployee))
                         employeesWithTwoShifts.Add(afternoonEmployee);

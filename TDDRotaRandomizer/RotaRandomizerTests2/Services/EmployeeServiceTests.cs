@@ -65,7 +65,8 @@ namespace RotaRandomizer.Services.Tests
         {
             Employee previousShiftEmployee = null;
             List<Employee> employeesWithTwoShifts = (await _employeeService.ListAsync()).ToList();
-            Employee chosen = await _employeeService.GetEmployeeForShift(previousShiftEmployee, employeesWithTwoShifts);
+            List<Employee> employeesWithZeroShifts = new List<Employee>();
+            Employee chosen = await _employeeService.GetEmployeeForShift(previousShiftEmployee, employeesWithTwoShifts, employeesWithZeroShifts);
             Assert.IsNull(chosen);
         }
 
@@ -76,7 +77,8 @@ namespace RotaRandomizer.Services.Tests
             List<Employee> employeesWithTwoShifts = (await _employeeService.ListAsync()).ToList();
             Employee shouldBePicked = employeesWithTwoShifts.First();
             employeesWithTwoShifts.Remove(shouldBePicked);
-            Employee chosen = await _employeeService.GetEmployeeForShift(previousShiftEmployee, employeesWithTwoShifts);
+            List<Employee> employeesWithZeroShifts = new List<Employee>();
+            Employee chosen = await _employeeService.GetEmployeeForShift(previousShiftEmployee, employeesWithTwoShifts, employeesWithZeroShifts);
             Assert.AreEqual(shouldBePicked, chosen);
         }
 
@@ -86,11 +88,12 @@ namespace RotaRandomizer.Services.Tests
             Employee previousShiftEmployee = null;
             List<Employee> employeesWithTwoShifts = new List<Employee>();
             int totalEmployees = (await _employeeService.ListAsync()).ToList().Count;
-            Employee chosen = await _employeeService.GetEmployeeForShift(previousShiftEmployee, employeesWithTwoShifts);
+            List<Employee> employeesWithZeroShifts = new List<Employee>();
+            Employee chosen = await _employeeService.GetEmployeeForShift(previousShiftEmployee, employeesWithTwoShifts, employeesWithZeroShifts);
             while (chosen != null)
             {
                 employeesWithTwoShifts.Add(chosen);
-                chosen = await _employeeService.GetEmployeeForShift(previousShiftEmployee, employeesWithTwoShifts);
+                chosen = await _employeeService.GetEmployeeForShift(previousShiftEmployee, employeesWithTwoShifts, employeesWithZeroShifts);
             }
             Assert.AreEqual(totalEmployees, employeesWithTwoShifts.Count);
         }
