@@ -31,5 +31,13 @@ namespace RotaRandomizer.Controllers
             var resources = _mapper.Map<IEnumerable<Shift>, IEnumerable<ShiftResource>>(shifts);
             return resources;
         }
+
+        [HttpGet]
+        public async Task<IEnumerable<ShiftResource>> GetShiftsInDay(DateTime date)
+        {
+            var shifts = await _shiftService.GetShiftsInDay(date);
+            var resources = _mapper.Map<IEnumerable<Shift>, IEnumerable<ShiftResource>>(shifts);
+            return resources;
+        }
     }
 }

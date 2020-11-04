@@ -8,15 +8,7 @@
             </b-row>
             <hr />
             <b-row>
-                <b-col>
-                    Yesterday
-                </b-col>
-                <b-col>
-                    Today
-                </b-col>
-                <b-col>
-                    Tomorrow
-                </b-col>
+
             </b-row>
         </b-container>
     </div>

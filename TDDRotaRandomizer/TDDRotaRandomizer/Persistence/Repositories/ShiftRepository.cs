@@ -28,8 +28,12 @@ namespace RotaRandomizer.Persistence.Repositories
                 await AddAsync(shift);
             }
         }
-              
 
+        public async Task<IEnumerable<Shift>> GetShiftsInDay(DateTime date)
+        {
+            return await _context.Shifts.Where(s => s.Start.Date.Equals(date.Date)).ToListAsync();
+        }
+        
         public async Task<IEnumerable<Shift>> ListAsync()
         {
             return await _context.Shifts.ToListAsync();
