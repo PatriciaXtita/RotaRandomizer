@@ -22,6 +22,7 @@ namespace RotaRandomizer
 {
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -32,6 +33,16 @@ namespace RotaRandomizer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("http://localhost:8081")
+                                      .AllowAnyHeader()
+                                      .AllowAnyMethod();
+                                  });
+            });
             services.AddControllers();
             var connection = Configuration["MySQLConnection:MySqlConnectionString"];
             services.AddDbContext<RotaDbContext>(options =>
@@ -69,6 +80,8 @@ namespace RotaRandomizer
 
             app.UseRouting();
 
+            app.UseCors(MyAllowSpecificOrigins);
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -78,3 +91,6 @@ namespace RotaRandomizer
         }
     }
 }
+
+
+

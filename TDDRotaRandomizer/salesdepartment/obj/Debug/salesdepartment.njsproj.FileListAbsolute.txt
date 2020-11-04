@@ -1,0 +1,3 @@
+C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\salesdepartment\obj\Debug\salesdepartment.njsprojAssemblyReference.cache
+C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\salesdepartment\obj\Debug\salesdepartment.njsproj.CoreCompileInputs.cache
+C:\Users\patricia\Documents\GitHub\RotaRandomizer\TDDRotaRandomizer\salesdepartment\bin\Microsoft.NodejsTools.WebRole.dll

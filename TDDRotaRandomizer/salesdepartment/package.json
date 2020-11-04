@@ -12,7 +12,11 @@
     "name": ""
   },
   "dependencies": {
-    "vue": "2.5.17"
+    "axios": "^0.21.0",
+    "bootstrap": "^4.5.3",
+    "bootstrap-vue": "^2.18.1",
+    "popper.js": "^1.16.1",
+    "vue": "^2.5.17"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "3.0.4",
