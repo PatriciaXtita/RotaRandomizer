@@ -44,11 +44,7 @@
         },
         mounted() {
             axios
-                .get('https://localhost:44352/api/employees/', {
-                    headers: {
-                        'Access-Control-Allow-Origin': true,
-                    }
-                })
+                .get('https://localhost:44352/api/employees/')
                 .then(response => (this.employees = response.data))
         }
     };

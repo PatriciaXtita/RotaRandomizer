@@ -3,7 +3,7 @@
         <b-container class="bv-example-row">
             <b-row>
                 <b-col align="center">
-                    <h4 class="mt-4">Shifts</h4>
+                    <h4 class="mt-4">Today's Shift</h4>
                 </b-col>
             </b-row>
             <hr />

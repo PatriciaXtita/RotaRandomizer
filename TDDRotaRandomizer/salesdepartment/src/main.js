@@ -17,6 +17,8 @@ import { FormPlugin } from 'bootstrap-vue'
 Vue.use(FormPlugin)
 import { TablePlugin } from 'bootstrap-vue'
 Vue.use(TablePlugin)
+import { AlertPlugin } from 'bootstrap-vue'
+Vue.use(AlertPlugin)
 
 new Vue({
     render: h => h(App)
