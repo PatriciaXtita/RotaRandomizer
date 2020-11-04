@@ -15,8 +15,10 @@ The main project is divided in three child projects that consist in:
 - Create a database and update appsettings.json in RotaRandomizer for the connection string intended
 - Open the solution in visual studio and run the project to start the API
 - From command prompt within the VueJS project run 
-	>npm run build
-	>npm run dev
+````
+npm run build
+npm run dev
+````
 - Access the url displayed.
 
 Warning: if the API runs in a different port than what's expected update to the url requests in the VueJS project are required.
