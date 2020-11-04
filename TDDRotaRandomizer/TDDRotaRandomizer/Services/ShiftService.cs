@@ -21,9 +21,9 @@ namespace RotaRandomizer.Services
             _configService = configService;
         }
 
-        public async Task<IEnumerable<Shift>> GetShiftsInDay(DateTime date)
+        public async Task<IEnumerable<Shift>> GetTodaysShift()
         {
-            return await _shiftRepository.GetShiftsInDay(date);
+            return await _shiftRepository.GetShiftsInDay(DateTime.Now);
         }
 
         public async Task<IEnumerable<Shift>> ListAsync()

@@ -46,9 +46,7 @@
                     {
                         "Start": this.rotadate
                     })
-                    .then((res) => {
-                        this.showAlert("Rota created")
-                    })
+                    .then(this.showAlert("Rota created"))
                     .catch((error) => {
                         this.showAlert(error.response.data)
                     });

@@ -14,7 +14,7 @@ namespace RotaRandomizer.Mapping
         {
             CreateMap<Employee, EmployeeResource>();
             CreateMap<Rota, RotaResource>();
-            CreateMap<Shift, ShiftResource>();
+            CreateMap<Shift, ShiftResource>().ForMember(se => se.ShiftEmployee, opt => opt.MapFrom(src => src.ShiftEmployee.Name));
         }
     }
 }

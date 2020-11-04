@@ -9,11 +9,14 @@
             <hr />
             <b-row>
                 <b-col cols="9">
-                    <b-row >
+                    <b-row>
                         <rota-generator></rota-generator>
                     </b-row>
                     <b-row>
                         <shift-menu></shift-menu>
+                    </b-row>
+                    <b-row>
+                        <rota-list></rota-list>
                     </b-row>
                 </b-col>
                 <b-col><employee-list :employees="employees"></employee-list></b-col>
@@ -27,6 +30,7 @@
     import EmployeeList from './components/EmployeeList.vue';
     import RotaGenerator from './components/RotaGenerator.vue';
     import ShiftMenu from './components/ShiftMenu.vue';
+    import RotaList from './components/RotaList.vue';
     import 'bootstrap/dist/css/bootstrap.css'
     import 'bootstrap-vue/dist/bootstrap-vue.css'
 
@@ -35,7 +39,8 @@
         components: {
             EmployeeList,
             RotaGenerator,
-            ShiftMenu
+            ShiftMenu,
+            RotaList
         },
         data() {
             return {
