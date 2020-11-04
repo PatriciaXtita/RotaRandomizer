@@ -31,7 +31,7 @@ namespace RotaRandomizer.Persistence.Repositories
 
         public async Task<IEnumerable<Shift>> GetShiftsInDay(DateTime date)
         {
-            return await _context.Shifts.Where(s => s.Start.Date.Equals(date.Date)).Include(s => s.ShiftEmployee).ToListAsync();
+            return await _context.Shifts.Where(s => s.Start.Date.Equals(date.Date)).Include(s => s.ShiftEmployee).OrderBy(s => s.Start).ToListAsync();
         }
         
         public async Task<IEnumerable<Shift>> ListAsync()

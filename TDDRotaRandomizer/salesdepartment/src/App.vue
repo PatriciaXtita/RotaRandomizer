@@ -10,23 +10,22 @@
             <b-row>
                 <b-col cols="9">
                     <b-row>
-                        <rota-generator></rota-generator>
+                        <rota-generator v-on:rotacreated="updateRotas()"></rota-generator>
                     </b-row>
                     <b-row>
                         <shift-menu></shift-menu>
                     </b-row>
                     <b-row>
-                        <rota-list></rota-list>
+                        <rota-list ref="rotalist"></rota-list>
                     </b-row>
                 </b-col>
-                <b-col><employee-list :employees="employees"></employee-list></b-col>
+                <b-col><employee-list></employee-list></b-col>
             </b-row>
         </b-container>
     </div>
 </template>
 
 <script>
-    import axios from 'axios';
     import EmployeeList from './components/EmployeeList.vue';
     import RotaGenerator from './components/RotaGenerator.vue';
     import ShiftMenu from './components/ShiftMenu.vue';
@@ -42,15 +41,10 @@
             ShiftMenu,
             RotaList
         },
-        data() {
-            return {
-                employees: [],
-            }
-        },
-        mounted() {
-            axios
-                .get('https://localhost:44352/api/employees/')
-                .then(response => (this.employees = response.data))
+        methods: {
+            updateRotas() {
+                this.$refs.rotalist.updateRotas();
+            },
         }
     };
 </script>

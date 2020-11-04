@@ -10,7 +10,7 @@ namespace RotaRandomizer.Resources
     {
         public DateTime Start { get; set; }
         public DateTime End { get; set; }
-        public EShiftType ShiftType { get; set; }
+        public string ShiftType { get; set; }
         public string ShiftEmployee { get; set; }
     }
 }

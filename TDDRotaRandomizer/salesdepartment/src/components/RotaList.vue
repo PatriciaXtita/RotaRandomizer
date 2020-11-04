@@ -7,7 +7,20 @@
                 </b-col>
                 <hr />
             </b-row>
-            <b-table striped small bordered :items=this.rotas></b-table>
+            <b-container v-for="rota in rotas">
+                <b-row>
+                    <b-col>
+                        Start: {{rota.start}}
+                    </b-col>
+                    <b-col>
+                        End: {{rota.end}}
+                    </b-col>
+                </b-row>
+                <b-row>
+                    <b-table striped small bordered :items=rota.shifts></b-table>
+                </b-row>
+            </b-container>
+           
         </b-container>
     </div>
 </template>
@@ -25,6 +38,13 @@
             axios
                 .get('https://localhost:44352/api/rotas')
                 .then(response => (this.rotas = response.data))
+        },
+        methods: {
+            updateRotas() {
+                axios
+                    .get('https://localhost:44352/api/rotas')
+                    .then(response => (this.rotas = response.data))
+            }
         }
     }
 </script>

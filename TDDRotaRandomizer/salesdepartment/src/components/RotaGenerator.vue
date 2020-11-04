@@ -46,13 +46,16 @@
                     {
                         "Start": this.rotadate
                     })
-                    .then(this.showAlert("Rota created"))
+                    .then(() => {
+                        this.showAlert("Rota created");
+                        this.$emit('rotacreated');
+                    })
                     .catch((error) => {
-                        this.showAlert(error.response.data)
-                    });
+                    this.showAlert(error.response.data)
+                });
 
-            }
         }
+    }
     }
 </script>
 

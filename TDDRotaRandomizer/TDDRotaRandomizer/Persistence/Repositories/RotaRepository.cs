@@ -17,7 +17,7 @@ namespace RotaRandomizer.Persistence.Repositories
 
         public async Task<IEnumerable<Rota>> ListAsync()
         {
-            return await _context.Rotas.ToListAsync();
+            return await _context.Rotas.Include(s => s.Shifts).ThenInclude(s => s.ShiftEmployee).ToListAsync();
         }
 
         public async Task AddAsync(Rota rota)
