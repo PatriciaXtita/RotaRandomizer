@@ -24,6 +24,9 @@ namespace RotaRandomizer.Controllers
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Returns the list of all employees in the system
+        /// </summary>
         [HttpGet]
         public async Task<IEnumerable<EmployeeResource>> GetAllAsync()
         {

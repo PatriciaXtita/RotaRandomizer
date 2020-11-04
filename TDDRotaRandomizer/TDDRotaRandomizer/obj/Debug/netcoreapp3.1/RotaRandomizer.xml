@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RotaRandomizer</name>
+    </assembly>
+    <members>
+        <member name="M:RotaRandomizer.Controllers.EmployeesController.GetAllAsync">
+            <summary>
+            Returns the list of all employees in the system
+            </summary>
+        </member>
+        <member name="M:RotaRandomizer.Controllers.RotasController.GetAllAsync">
+            <summary>
+            Returns the list of all rotas in the system
+            </summary>
+        </member>
+        <member name="M:RotaRandomizer.Controllers.RotasController.PostAsync(RotaRandomizer.Resources.CreateRotaResource)">
+            <summary>
+            Generates a new rota if possible, if rota is already created it returns the same one.
+            </summary>
+            <param name="date">Date of rota to be created</param>       
+        </member>
+        <member name="M:RotaRandomizer.Controllers.ShiftsController.GetAllAsync">
+            <summary>
+            Get all shifts in the system
+            </summary> 
+        </member>
+        <member name="M:RotaRandomizer.Controllers.ShiftsController.GetTodaysShift">
+            <summary>
+            Get today's shifts
+            </summary> 
+        </member>
+        <member name="M:RotaRandomizer.Domain.Services.Communication.CreateRotaResponse.#ctor(RotaRandomizer.Models.Rota)">
+            <summary>
+            Creates a success response.
+            </summary>
+            <param name="rota">Saved rota.</param>
+            <returns>Response.</returns>
+        </member>
+        <member name="M:RotaRandomizer.Domain.Services.Communication.CreateRotaResponse.#ctor(System.String)">
+            <summary>
+            Creates am error response.
+            </summary>
+            <param name="message">Error message.</param>
+            <returns>Response.</returns>
+        </member>
+    </members>
+</doc>

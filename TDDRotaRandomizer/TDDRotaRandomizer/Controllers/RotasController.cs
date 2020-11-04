@@ -19,12 +19,16 @@ namespace RotaRandomizer.Controllers
         private readonly IRotaService _rotaService;
         private readonly IMapper _mapper;
 
+
         public RotasController(IRotaService rotaService, IMapper mapper)
         {
             _rotaService = rotaService;
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Returns the list of all rotas in the system
+        /// </summary>
         [HttpGet]
         public async Task<IEnumerable<RotaResource>> GetAllAsync()
         {
@@ -33,6 +37,11 @@ namespace RotaRandomizer.Controllers
             return resources;
         }
 
+
+        /// <summary>
+        /// Generates a new rota if possible, if rota is already created it returns the same one.
+        /// </summary>
+        /// <param name="date">Date of rota to be created</param>       
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromBody] CreateRotaResource resource)
         {

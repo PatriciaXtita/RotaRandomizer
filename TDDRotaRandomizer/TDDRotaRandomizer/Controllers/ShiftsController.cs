@@ -24,6 +24,9 @@ namespace RotaRandomizer.Controllers
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Get all shifts in the system
+        /// </summary> 
         [HttpGet]
         public async Task<IEnumerable<ShiftResource>> GetAllAsync()
         {
@@ -32,6 +35,10 @@ namespace RotaRandomizer.Controllers
             return resources;
         }
 
+
+        /// <summary>
+        /// Get today's shifts
+        /// </summary> 
         [HttpGet]
         [Route("today")]
         public async Task<IEnumerable<ShiftResource>> GetTodaysShift()

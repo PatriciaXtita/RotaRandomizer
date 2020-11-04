@@ -21,5 +21,7 @@ npm run dev
 ````
 - Access the url displayed.
 
+## Remarks
 Warning: if the API runs in a different port than what's expected update to the url requests in the VueJS project are required.
+API documentation was made with swashbuckle and is accessible from the /swagger url.
 
